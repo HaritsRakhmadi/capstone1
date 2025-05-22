@@ -57,7 +57,10 @@
 
             if(Auth::attempt(['email' => $request -> email,'password' => $request -> password])){
                 $request -> session() -> put('user_name', Auth::user() -> name);
-                $request -> session() -> put('user_id', Auth::user() -> id); 
+                $request -> session() -> put('user_id', Auth::user() -> id);
+                $request -> session() -> put('user_email', Auth::user() -> email);
+                $request -> session() -> put('user_phonenumber', Auth::user() -> phonenumber);
+                
                 return redirect()-> route('profile');
 
             }
