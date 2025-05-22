@@ -26,6 +26,14 @@
             return view('profile');
         }
 
+        public function article1(){
+            return view('article1');
+        }
+
+        public function article2(){
+            return view('article2');
+        }
+      
         public function store(Request $request){
             
             // $request -> validate([
