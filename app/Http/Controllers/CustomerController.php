@@ -1,6 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
+
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Hash;
     use App\Models\User;
@@ -10,6 +11,12 @@
     
     class CustomerController extends Controller
     {
+        public function __construct()
+        {
+            /** @var \App\Http\Controllers\Controller $this */
+            $this -> middleware('auth') -> only(['profile','update', 'userupdate', 'article1', 'article2']);
+        }
+
         public function index(){
             return view('home');
         }

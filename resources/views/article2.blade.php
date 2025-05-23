@@ -1,44 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Langkah Styling Rambut</title>
+  <style>
+    body {
+      background-color: #fdfdfd;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      padding: 40px 20px;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      color: rgba(3,60,135,255);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    ol {
+      padding-left: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    strong {
+      color: rgba(3,60,135,255);
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    ::selection {
+      background: rgba(248,202,31,255);
+      color: #000;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Langkah Jitu Styling Rambut dengan Produk Remington</h1>
+  <h1>Langkah Jitu Styling Rambut dengan Alat Penata Rambut</h1>
 
   <p>
-    Gaya rambut bisa menjadi salah satu aspek yang mencerminkan karakter diri. Oleh karena itu, terdapat berbagai alat yang dapat digunakan untuk membuat rambut terlihat elegan dan menawan.
+    Gaya rambut bisa menjadi salah satu aspek yang mencerminkan karakter diri. Oleh karena itu, terdapat berbagai alat penata rambut yang dapat digunakan untuk membuat tampilan rambut lebih elegan dan menarik.
   </p>
 
   <p>
-    Dalam mengkreasikan gaya rambut, setiap orang memiliki caranya masing-masing. Namun, ada juga yang gagal dalam menciptakan tampilan rambut yang keren dan justru membuatnya terlihat lebih buruk.
+    Dalam mengkreasikan gaya rambut, setiap orang memiliki caranya masing-masing. Namun, terkadang ada juga yang gagal menciptakan tampilan rambut yang keren sehingga justru membuatnya terlihat kurang menarik.
   </p>
 
   <p>
-    Untuk itu, diperlukan cara agar styling rambut bisa maksimal. Berikut beberapa langkah jitu dalam styling rambut dengan ragam produk serbabisa dari <strong>Remington</strong>, produsen personal care populer global yang telah berdiri sejak 1937:
+    Oleh karena itu, diperlukan langkah-langkah tepat agar proses styling rambut bisa memberikan hasil maksimal. Berikut beberapa langkah jitu dalam menata rambut menggunakan alat penata rambut yang umum digunakan:
   </p>
 
   <ol>
     <li>
-      <strong>Manfaatkan hair dryer untuk mengeringkan rambut</strong><br>
-      Setelah mandi, keringkan rambut menggunakan handuk terlebih dahulu sebelum menggunakan hair dryer. Hal ini penting karena jika langsung menggunakan hair dryer saat rambut masih basah, rambut bisa mudah rontok dan patah. Gunakan pengaturan suhu optimal, yaitu antara 50–60°C untuk mencegah kerusakan rambut.
+      <strong>Keringkan rambut dengan hair dryer</strong><br>
+      Setelah keramas, keringkan rambut terlebih dahulu menggunakan handuk sebelum menggunakan hair dryer. Ini penting untuk menghindari kerusakan rambut akibat panas langsung. Gunakan suhu optimal sekitar 50–60°C agar rambut tetap sehat.
     </li>
 
     <li>
-      <strong>Gunakan catok rambut</strong><br>
-      Setelah rambut benar-benar kering, gunakan catok rambut untuk menciptakan gaya sesuai keinginan. Catokan tak hanya membuat rambut lurus, tapi juga dapat digunakan untuk membuat gaya seperti <em>soft waves</em> hingga <em>curly</em> di bagian bawah rambut. Pastikan suhu alat sesuai agar hasil maksimal.
+      <strong>Gunakan catokan untuk menciptakan berbagai gaya</strong><br>
+      Setelah rambut benar-benar kering, kamu bisa menggunakan catokan untuk meluruskan atau membentuk gaya rambut seperti <em>soft waves</em> dan <em>curly</em>. Pastikan suhu alat sesuai agar hasilnya maksimal dan rambut tidak rusak.
     </li>
 
     <li>
-      <strong>Manfaatkan curling iron untuk buat gaya rambut curly</strong><br>
-      Gaya rambut <em>curly</em> kini sangat populer. Kamu bisa melakukannya sendiri di rumah menggunakan <strong>curling iron</strong> tanpa harus ke salon. Cara penggunaannya serupa dengan hair dryer dan catokan.
+      <strong>Gunakan curling iron untuk rambut keriting</strong><br>
+      Untuk menciptakan tampilan rambut <em>curly</em>, kamu bisa menggunakan curling iron di rumah tanpa perlu ke salon. Alat ini membantu membentuk ikal pada bagian bawah rambut dengan hasil yang menarik.
     </li>
 
     <li>
-      <strong>Buat rambut bervolume agar terlihat lebih menawan saat keluar rumah</strong><br>
-      Tampilan rambut <em>blow</em> ala salon kini bisa kamu buat sendiri di rumah dengan sisir khusus untuk menambah volume rambut.
+      <strong>Buat rambut lebih bervolume</strong><br>
+      Tampilan rambut <em>blow</em> ala salon kini bisa dilakukan sendiri di rumah. Gunakan sisir khusus penambah volume saat mengeringkan rambut agar rambut tampak lebih tebal dan berisi.
     </li>
   </ol>
 </body>
