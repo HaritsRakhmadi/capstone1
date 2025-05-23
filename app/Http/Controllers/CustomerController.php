@@ -1,5 +1,5 @@
 <?php
-    namespace app\Http\Controllers;
+    namespace App\Http\Controllers;
 
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Hash;
@@ -7,7 +7,7 @@
     use App\Http\Controllers\Controller;
     use Illuminate\Support\Facades\Auth;
 
-
+    
     class CustomerController extends Controller
     {
         public function index(){
@@ -33,7 +33,11 @@
         public function article2(){
             return view('article2');
         }
-      
+        
+        public function update(){
+            return view('update');
+        }
+
         public function store(Request $request){
             
             // $request -> validate([
@@ -74,5 +78,22 @@
             $request -> session() -> regenerateToken();
 
             return redirect() -> route('login');
+        }
+
+        public function userupdate(Request $request){
+            /** @var \App\Models\User $user */
+            $user = Auth::user();
+            $user -> name = $request -> name;
+            $user -> email = $request -> email;
+            $user -> password = Hash::make($request -> password);
+            $user -> phonenumber = $request -> phonenumber;
+            $user -> save();
+
+            $request -> session() -> put('user_name', Auth::user() -> name);
+            $request -> session() -> put('user_id', Auth::user() -> id);
+            $request -> session() -> put('user_email', Auth::user() -> email);
+            $request -> session() -> put('user_phonenumber', Auth::user() -> phonenumber);
+            
+            return redirect()-> route('profile');
         }
     }

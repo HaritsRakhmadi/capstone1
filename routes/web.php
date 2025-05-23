@@ -18,10 +18,17 @@ Route::get('/article1', [CustomerController::class, 'article1']) -> name('articl
 
 Route::get('/article2', [CustomerController::class, 'article2']) -> name('article2');
 
+Route::get('/update', [CustomerController::class, 'update']) -> name('update');
+
+
+
 
 Route::post('/register', [CustomerController::class, 'store']) -> name('store');
 
 Route::post('/login', [CustomerController::class, 'userlogin']) -> name('userlogin');
 
-Route::post('/profile', [CustomerController::class, 'userlogout']) -> name('userlogout');
+Route::post('/logout', [CustomerController::class, 'userlogout']) -> name('userlogout');
 
+Route::post('/logout', [CustomerController::class, 'userlogout']) -> name('userlogout');
+
+Route::post('/userupdate', [CustomerController::class, 'userupdate']) -> name('userupdate');
