@@ -92,6 +92,14 @@
   <h4>Email: {{session('user_email')}}</h4>
   <h4>Phone Number: {{session('user_phonenumber')}}</h4>
 
+  
+
+  <form action="{{route('booking')}}" method="get">
+    <button type="submit"> BOOK NOW</button>
+  </form>
+    
+  
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

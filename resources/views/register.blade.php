@@ -177,7 +177,7 @@
         <p>Fill in your data to create an account.</p>
 
         <label for="name">Full Name</label>
-        <input type="text" placeholder="Enter your full name" name="name" required />
+        <input type="text" placeholder="Enter your full name" name="name" required/>
 
         <label for="email">Email</label>
         <input type="email" placeholder="Enter your email" name="email" required />

@@ -167,7 +167,11 @@
         @csrf
 
         <h2>Sign up</h2>
-        <p>Fill in your data to login to your account.</p>
+        <p>Login to your account.</p>
+
+        @if(session()->has('Success'))
+          <p>{{session()->get('Success')}}</p>
+        @endif
 
         <label for="email">Email</label>
         <input type="email" placeholder="Enter your email" name="email" />

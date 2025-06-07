@@ -7,6 +7,7 @@
     use App\Models\User;
     use App\Http\Controllers\Controller;
     use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Http;
 
     
     class CustomerController extends Controller
@@ -14,7 +15,7 @@
         public function __construct()
         {
             /** @var \App\Http\Controllers\Controller $this */
-            $this -> middleware('auth') -> only(['profile','update', 'userupdate', 'article1', 'article2']);
+            $this -> middleware('auth') -> only(['profile','update', 'userupdate', 'booking']);
         }
 
         public function index(){
@@ -30,29 +31,31 @@
         }
 
         public function profile(){
+            $events = [];
             return view('profile');
         }
 
-        public function article1(){
-            return view('article1');
-        }
-
-        public function article2(){
-            return view('article2');
-        }
         
         public function update(){
             return view('update');
         }
 
+        public function booking(){
+            return view('booking');
+        }
+
+        public function mybookings(){
+            return view('mybookings');
+        }
+
         public function store(Request $request){
             
-            // $request -> validate([
-            //     'username' => 'required|string|max:255',
-            //     'email' => 'required|email|unique:users,email',
-            //     'userpassword' => 'required|string|min:8',
-            //     'phonenumber' => 'required|digits_between:10,15'
-            // ]);
+            $request -> validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|unique:users,email',
+                'password' => 'required|string|min:2',
+                'phonenumber' => 'required|digits_between:2,15'
+            ]);
             
             User::create([
                 'name' => $request -> name,
@@ -103,4 +106,19 @@
             
             return redirect()-> route('profile');
         }
-    }
+
+        public function fetchCalendlyData(){
+           
+            $CalendlyAPIToken = 'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzQ5MTE5Njc2LCJqdGkiOiJlMTBiYTQwMS0wMGE1LTRiMjctOWMwZC1kNTViMzUxOTM2OTAiLCJ1c2VyX3V1aWQiOiI3NjRhNTkyYS1lMzljLTQ5MWUtYjZhNS0yMzgwMjlhMWE1ZmIifQ.M4TDMiRoDHnyy-xMr17K2QmsRAAVDOcJLLHvwQR1VKDCo0Yi3qS3gVF1y9zfX0LfhcjZExqrzekfa2Hy2JNvdw';
+            $response = Http::withToken($CalendlyAPIToken) -> get('https://api.calendly.com/scheduled_events/764a592a-e39c-491e-b6a5-238029a1a5fb');
+            dd($response);
+            if ($response -> successful()){
+                $data = $response -> json();
+                $events =  $data['collection']??[];
+            } else{
+                $events = [];
+            }
+
+            return view('mybookings', compact('events'));
+        }
+}
